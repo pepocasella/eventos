@@ -33,3 +33,20 @@ npm run build
 ```sh
 npm run lint
 ```
+
+
+# eventos
+
+
+
+npx create-vue real-world-vue
+
+
+   cd eventos
+   npm install
+   npm run format
+   npm run dev
+
+| Optional: Initialize Git in your project directory with:
+  
+   git init && git add -A && git commit -m "initial commit"
