@@ -1,23 +1,19 @@
 <script setup>
-import axios from 'axios'
-import { onMounted, ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import EventCard from '@/components/EventCard.vue'
+import EventService from '@/services/EventService.js'
 
 const events = ref(null)
 
-
 onMounted(() => {
-
-  axios.get('https://my-json-server.typicode.com/pepocasella/eventos/events')
-  .then((response)=> {
-    console.log('eventos:', response.data)
-    events.value = response.data
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+  EventService.getEvents()
+    .then((response) => {
+      events.value = response.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 })
-
 </script>
 
 <template>
