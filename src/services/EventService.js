@@ -10,10 +10,14 @@ const apiClient = axios.create({
 })
 
 export default {
-  getEvents() {
-    return apiClient.get('/events')
+  async getEvents() {
+    const response = await apiClient.get('/events')
+
+    return response.data
   },
-  getEvent(id) {
-    return apiClient.get('/events/' + id)
+  async getEvent(id) {
+    const response = await apiClient.get('/events/' + id);
+
+    return response.data
   },
 }
